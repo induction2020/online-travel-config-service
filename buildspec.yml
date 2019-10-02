@@ -3,7 +3,8 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR Thiruppathi...
+      - echo Logging in to Amazon ECR...
+      - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - REPOSITORY_URI=687842555901.dkr.ecr.ap-south-1.amazonaws.com/config-service
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
