@@ -1,0 +1,24 @@
+{
+    "executionRoleArn": "arn:aws:iam::687842555901:role/service-role/AWSCodePipelineServiceRole",
+    "containerDefinitions": [
+        {
+            "name": "config-service",
+            "image": "config-service",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "containerPort": 8091
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "networkMode": "default",
+    "cpu": "256",
+    "memory": "512",
+    "family": "config-service-family"
+}
