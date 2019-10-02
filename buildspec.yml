@@ -1,11 +1,17 @@
 version: 0.2
 
+version: 0.2
+
 phases:
   install:
     runtime-versions:
+      java: openjdk8
       docker: 18
+      nodejs: 10
   pre_build:
     commands:
+      - echo docker version...
+      - docker --version
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
-      - docker --version
+      
