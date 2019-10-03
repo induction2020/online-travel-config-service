@@ -7,13 +7,6 @@ Resources:
         LoadBalancerInfo:
           ContainerName:  "ECS Instance - EC2ContainerService-Config-Service-Cluster"
           ContainerPort: 80
-# Optional properties
-#        PlatformVersion: "LATEST"
-#        NetworkConfiguration:
-#          AwsvpcConfiguration:
-#            Subnets: ["subnet-1234abcd","subnet-5678abcd"]
-#            SecurityGroups: ["sg-12345678"]
-#            AssignPublicIp: "ENABLED"
 Hooks:
   - BeforeInstall: "LambdaFunctionToValidateBeforeInstall"
   - AfterInstall: "LambdaFunctionToValidateAfterTraffic"
